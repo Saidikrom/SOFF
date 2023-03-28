@@ -1,16 +1,7 @@
-# soff
+# SOFF
+Online Furniture Shopping App
 
-A new Flutter project.
+![Asset 2](https://user-images.githubusercontent.com/70878222/227122112-d1a23b12-dd1d-4110-bdb8-7a6082cd4516.png)
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# UI
+![Component](https://user-images.githubusercontent.com/70878222/227128680-6f4daeb4-f0a3-4d02-9eb0-19b7bc8ef7fa.png)
