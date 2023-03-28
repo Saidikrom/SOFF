@@ -14,6 +14,7 @@ class Product with ChangeNotifier {
   final String maximumLoad;
   final String imgUrl;
   final double price;
+  final String arUrl;
   bool isFavorite;
   final bool isAR;
 
@@ -32,6 +33,7 @@ class Product with ChangeNotifier {
     required this.price,
     required this.imgUrl,
     required this.isAR,
+    required this.arUrl,
     this.isFavorite = false,
   });
 

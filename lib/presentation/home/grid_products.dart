@@ -31,7 +31,7 @@ class GridProduct extends StatelessWidget {
       itemBuilder: (ctx, i) {
         return ChangeNotifierProvider<Product>.value(
           value: griditem[i],
-          child: GridProductItem(),
+          child: GridProductItem(i: i),
         );
       },
     );

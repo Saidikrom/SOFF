@@ -7,8 +7,10 @@ import '../../models/product.dart';
 import 'product item page/product_item_page.dart';
 
 class GridProductItem extends StatelessWidget {
+  final int i;
   const GridProductItem({
     super.key,
+    required this.i,
   });
 
   @override
@@ -19,11 +21,13 @@ class GridProductItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         GestureDetector(
-          onTap: (){
-              Navigator.of(context).pushNamed(
+          onTap: () {
+            Navigator.of(context).pushNamed(
               ProductItemPage.routName,
-              arguments: gridItem.id,
+              arguments: {"gridItem": gridItem.id, "i": i},
             );
+            // print(i);
+            // Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext ctx)=>ProductItemPage(i: i, productId: gridItem.id,));
           },
           child: Container(
             width: 186,

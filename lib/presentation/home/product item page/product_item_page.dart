@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:soff/presentation/AR%20screen/ar_screen.dart';
 import 'package:soff/providers/products.dart';
 import 'package:svg_icon/svg_icon.dart';
 
@@ -9,7 +10,11 @@ import '../bottom_bar.dart';
 import 'about_product.dart';
 
 class ProductItemPage extends StatefulWidget {
-  const ProductItemPage({super.key});
+  // int? i;
+  // String? productId;
+  ProductItemPage({
+    super.key,
+  });
   static const routName = "/Detail";
 
   @override
@@ -17,13 +22,18 @@ class ProductItemPage extends StatefulWidget {
 }
 
 class _ProductItemPageState extends State<ProductItemPage> {
+  var isCart = false;
   @override
   Widget build(BuildContext context) {
-    final productId = ModalRoute.of(context)!.settings.arguments;
+    final productId = (ModalRoute.of(context)!.settings.arguments ??
+        <String, dynamic>{'gridItem': ""}) as Map<String, dynamic>;
+    final i = (ModalRoute.of(context)!.settings.arguments ??
+        <String, dynamic>{'i': int}) as Map<String, dynamic>;
+
     final cart = Provider.of<Cart>(context, listen: false);
     final products = Provider.of<Products>(context, listen: false)
-        .findId(productId.toString());
-    // print(cart.items['p1']!.quality);
+        .findId(productId['gridItem'].toString());
+    print(cart.items.isEmpty);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -88,7 +98,7 @@ class _ProductItemPageState extends State<ProductItemPage> {
                                     color: Colors.black.withOpacity(0.1),
                                     spreadRadius: 5,
                                     blurRadius: 20,
-                                    offset: Offset(
+                                    offset: const Offset(
                                         0, 0), // changes position of shadow
                                   ),
                                 ],
@@ -193,81 +203,186 @@ class _ProductItemPageState extends State<ProductItemPage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              GestureDetector(
-                onTap: () {},
-                child: Container(
-                  width: 182,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(100),
-                    border: Border.all(
-                      color: Color(0xff249B69),
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const SvgIcon(
-                        "assets/icons/cube_icon.svg",
-                        color: Color(0xff249B69),
-                        height: 18,
-                        width: 18,
-                      ),
-                      const SizedBox(
-                        width: 8,
-                      ),
-                      Text(
-                        "View in AR mode",
-                        style: GoogleFonts.roboto(
-                          color: const Color(0xff249B69),
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
+              products.isAR
+                  ? GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                ARViewScreen(link: products.arUrl),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        width: 182,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(100),
+                          border: Border.all(
+                            color: const Color(0xff249B69),
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const SvgIcon(
+                              "assets/icons/cube_icon.svg",
+                              color: Color(0xff249B69),
+                              height: 18,
+                              width: 18,
+                            ),
+                            const SizedBox(
+                              width: 8,
+                            ),
+                            Text(
+                              "View in AR mode",
+                              style: GoogleFonts.roboto(
+                                color: const Color(0xff249B69),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
-                ),
-              ),
-              Consumer<Cart>(builder: (ctx, value, child) {
-                return GestureDetector(
-                  onTap: () {
-                    setState(() {});
-                    cart.addToCart(
-                      products.id,
-                      products.title,
-                      products.imgUrl,
-                      products.price,
-                      products.manufacturer,
-                    );
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => CustomBottomAppBar(
-                          sentIndex: 2,
-                        ),
-                      ),
-                    );
-                  },
-                  child: Container(
-                    width: 182,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      color: const Color(0xff249B69),
-                      borderRadius: BorderRadius.circular(100),
+                    )
+                  : SizedBox(),
+              isCart
+                  ? Consumer<Cart>(builder: (ctx, value, child) {
+                      final cartItem = cart.items.values.toList()[i["i"]];
+                      return Row(
+                        children: [
+                          Container(
+                            width: 69,
+                            height: 40,
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFEEEEEE),
+                              borderRadius: BorderRadius.circular(100),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    cart.removeSingleItem(products.id);
+                                  },
+                                  child: Container(
+                                    height: 25,
+                                    width: 20,
+                                    color: Colors.transparent,
+                                    child: Center(
+                                      child: Text(
+                                        "-",
+                                        style: GoogleFonts.roboto(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Text(
+                                  cartItem.quality.toString(),
+                                  style: GoogleFonts.roboto(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    cart.addToCart(
+                                        products.id,
+                                        products.title,
+                                        products.imgUrl,
+                                        products.price,
+                                        products.manufacturer);
+                                  },
+                                  child: Container(
+                                    height: 25,
+                                    width: 20,
+                                    color: Colors.transparent,
+                                    child: Center(
+                                      child: Text(
+                                        "+",
+                                        style: GoogleFonts.roboto(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => CustomBottomAppBar(
+                                    sentIndex: 2,
+                                  ),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              width: 100,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                color: const Color(0xff249B69),
+                                borderRadius: BorderRadius.circular(100),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "Cart",
+                                  style: GoogleFonts.roboto(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      );
+                    })
+                  : Consumer<Cart>(
+                      builder: (ctx, value, child) {
+                        return GestureDetector(
+                          onTap: () {
+                            setState(() {});
+                            cart.addToCart(
+                              products.id,
+                              products.title,
+                              products.imgUrl,
+                              products.price,
+                              products.manufacturer,
+                            );
+                            isCart = true;
+                          },
+                          child: Container(
+                            width: products.isAR ? 182 : 370,
+                            height: 40,
+                            decoration: BoxDecoration(
+                              color: const Color(0xff249B69),
+                              borderRadius: BorderRadius.circular(100),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Add to cart",
+                                style: GoogleFonts.roboto(
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
                     ),
-                    child: Center(
-                      child: Text(
-                        "Add to cart",
-                        style: GoogleFonts.roboto(
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                  ),
-                );
-              })
             ],
           ),
         ),

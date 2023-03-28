@@ -12,6 +12,7 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cart = Provider.of<Cart>(context, listen: false);
+    print(cart.items.isEmpty);
     return Scaffold(
       // backgroundColor: Colors.amber,
       body: SafeArea(
