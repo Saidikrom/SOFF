@@ -129,3 +129,4 @@ class GridProductItem extends StatelessWidget {
     );
   }
 }
+

@@ -11,8 +11,19 @@ import '../profile/profile_page.dart';
 import 'home_page.dart';
 
 class CustomBottomAppBar extends StatefulWidget {
+  final bool isTrue;
   int? sentIndex;
-  CustomBottomAppBar({Key? key, this.sentIndex}) : super(key: key);
+  String? name;
+  String? number;
+  String? image;
+  CustomBottomAppBar(
+      {Key? key,
+      this.sentIndex,
+      this.name,
+      this.number,
+      required this.isTrue,
+      this.image})
+      : super(key: key);
   static const routName = "/bottom";
   @override
   State<CustomBottomAppBar> createState() => _CustomBottomAppBarState();
@@ -27,7 +38,14 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
       HomePage(),
       FavoritesPage(),
       CartPage(),
-      ProfilePage(),
+      widget.isTrue
+          ? ProfilePage(
+              isTrue: widget.isTrue,
+              image: widget.image,
+              name: widget.name,
+              number: widget.number,
+            )
+          : ProfilePage(isTrue: false)
     ];
 
     return Scaffold(

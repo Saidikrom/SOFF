@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
 import 'package:soff/presentation/auth/auth_page.dart';
+import 'package:soff/presentation/auth/create_account.dart';
 import 'package:soff/presentation/home/bottom_bar.dart';
 
 // ignore: must_be_immutable
@@ -34,7 +35,7 @@ class _SMSPageState extends State<SMSPage> {
         fontWeight: FontWeight.w400,
       ),
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 255, 255, 255),
+        color: Colors.white,
         borderRadius: BorderRadius.circular(8),
         border: Border.all(color: isTrue ? Colors.green : Colors.red),
       ),
@@ -143,8 +144,12 @@ class _SMSPageState extends State<SMSPage> {
               PhoneAuthCredential credential = PhoneAuthProvider.credential(
                   verificationId: AuthPage.verify, smsCode: pinput.text);
               await auth.signInWithCredential(credential);
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext ctx) => CustomBottomAppBar()));
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (BuildContext ctx) =>
+                      CreateAccount(number: widget.login),
+                ),
+              );
             } catch (e) {
               print("wrong");
             }

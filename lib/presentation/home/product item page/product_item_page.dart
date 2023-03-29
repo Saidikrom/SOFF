@@ -321,6 +321,7 @@ class _ProductItemPageState extends State<ProductItemPage> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => CustomBottomAppBar(
+                                    isTrue: false,
                                     sentIndex: 2,
                                   ),
                                 ),
