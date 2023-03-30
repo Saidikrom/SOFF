@@ -286,6 +286,16 @@ class _ProfilePageState extends State<ProfilePage> {
                 const SettingsPart(
                   title: "About us",
                 ),
+                widget.isTrue
+                    ? const SettingsPart(
+                        title: "Delete account",
+                      )
+                    : const SizedBox(),
+                widget.isTrue
+                    ? const SettingsPart(
+                        title: "Log out",
+                      )
+                    : const SizedBox(),
                 Center(
                   heightFactor: 3,
                   child: Text(

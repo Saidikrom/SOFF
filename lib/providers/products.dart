@@ -17,7 +17,7 @@ class Products with ChangeNotifier {
       title: "Кресло руководительское STRANGER",
       rating: "Rating:3 (Medium)",
       price: 94.5,
-      arUrl:"https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
+      arUrl: "https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
       description:
           "Минималистичное и лаконичное кресло Berry будет выигрышно смотреться в каждом интерьере. Выгибающая спинка кресла и подлокотники обеспечат комфортное положение сидящему человеку.",
       imgUrl:
@@ -36,7 +36,8 @@ class Products with ChangeNotifier {
       title: "Кресло игровое ROBOT черный",
       rating: "Rating:3 (Medium)",
       price: 420.92,
-     arUrl:"https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
+      arUrl:
+          "https://github.com/Saidikrom/images/raw/Saidikrom/models/chair.glb",
       description:
           "Минималистичное и лаконичное кресло Berry будет выигрышно смотреться в каждом интерьере. Выгибающая спинка кресла и подлокотники обеспечат комфортное положение сидящему человеку.",
       imgUrl:
@@ -55,7 +56,8 @@ class Products with ChangeNotifier {
       title: "Кресло для персонала DUOREST A683 серый",
       rating: "Rating:3 (Medium)",
       price: 172.04,
-     arUrl:"https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
+      arUrl:
+          "https://github.com/Saidikrom/images/raw/Saidikrom/models/egg_chair.glb",
       description:
           "Минималистичное и лаконичное кресло Berry будет выигрышно смотреться в каждом интерьере. Выгибающая спинка кресла и подлокотники обеспечат комфортное положение сидящему человеку.",
       imgUrl:
@@ -74,7 +76,8 @@ class Products with ChangeNotifier {
       title: "Кресло руководительское STRANGER (CM-F85A) синий",
       rating: "Rating:3 (Medium)",
       price: 270.67,
-     arUrl:"https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
+      arUrl:
+          "https://github.com/Saidikrom/images/raw/Saidikrom/models/folding_bed.glb",
       description:
           "Минималистичное и лаконичное кресло Berry будет выигрышно смотреться в каждом интерьере. Выгибающая спинка кресла и подлокотники обеспечат комфортное положение сидящему человеку.",
       imgUrl:
@@ -93,7 +96,8 @@ class Products with ChangeNotifier {
       title: "Кресло для персонала DUOREST A683 зеленый",
       rating: "Rating:3 (Medium)",
       price: 172.04,
-     arUrl:"https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
+      arUrl:
+          "https://github.com/Saidikrom/images/raw/Saidikrom/models/office_chair.glb",
       description:
           "Минималистичное и лаконичное кресло Berry будет выигрышно смотреться в каждом интерьере. Выгибающая спинка кресла и подлокотники обеспечат комфортное положение сидящему человеку.",
       imgUrl:
@@ -112,7 +116,8 @@ class Products with ChangeNotifier {
       title: "Кресло детское MIREI черный",
       rating: "Rating:3 (Medium)",
       price: 30.97,
-      arUrl:"https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
+      arUrl:
+          "https://github.com/Saidikrom/images/raw/Saidikrom/models/sofa.glb",
       description:
           "Минималистичное и лаконичное кресло Berry будет выигрышно смотреться в каждом интерьере. Выгибающая спинка кресла и подлокотники обеспечат комфортное положение сидящему человеку.",
       imgUrl:
@@ -131,7 +136,8 @@ class Products with ChangeNotifier {
       title: "Кресло детское MIREI синий",
       rating: "Rating:3 (Medium)",
       price: 30.97,
-      arUrl:"https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
+      arUrl:
+          "https://github.com/Saidikrom/images/raw/Saidikrom/models/office_chair.glb",
       description:
           "Минималистичное и лаконичное кресло Berry будет выигрышно смотреться в каждом интерьере. Выгибающая спинка кресла и подлокотники обеспечат комфортное положение сидящему человеку.",
       imgUrl:
@@ -150,7 +156,8 @@ class Products with ChangeNotifier {
       title: "Кресло детское MIREI красный",
       rating: "Rating:3 (Medium)",
       price: 30.97,
-      arUrl:"https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
+      arUrl:
+          "https://github.com/Saidikrom/images/raw/Saidikrom/models/office_chair_red.glb",
       description:
           "Минималистичное и лаконичное кресло Berry будет выигрышно смотреться в каждом интерьере. Выгибающая спинка кресла и подлокотники обеспечат комфортное положение сидящему человеку.",
       imgUrl:
@@ -169,7 +176,7 @@ class Products with ChangeNotifier {
       title: "Кресло руководительское MILES A2003 серый",
       rating: "Rating:3 (Medium)",
       price: 387.66,
-     arUrl:"https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
+      arUrl: "https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
       description:
           "Минималистичное и лаконичное кресло Berry будет выигрышно смотреться в каждом интерьере. Выгибающая спинка кресла и подлокотники обеспечат комфортное положение сидящему человеку.",
       imgUrl:
@@ -188,7 +195,7 @@ class Products with ChangeNotifier {
       title: "Кресло посетительское DAMARIS (C67) чёрный",
       rating: "Rating:3 (Medium)",
       price: 91.75,
-      arUrl:"https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
+      arUrl: "https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
       description:
           "Минималистичное и лаконичное кресло Berry будет выигрышно смотреться в каждом интерьере. Выгибающая спинка кресла и подлокотники обеспечат комфортное положение сидящему человеку.",
       imgUrl:
@@ -207,7 +214,7 @@ class Products with ChangeNotifier {
       title: "Кресло детское KIDDY черный",
       rating: "Rating:3 (Medium)",
       price: 42.44,
-      arUrl:"https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
+      arUrl: "https://github.com/Saidikrom/images/raw/Saidikrom/models/folding_bed.glb",
       description:
           "Минималистичное и лаконичное кресло Berry будет выигрышно смотреться в каждом интерьере. Выгибающая спинка кресла и подлокотники обеспечат комфортное положение сидящему человеку.",
       imgUrl:
@@ -226,7 +233,7 @@ class Products with ChangeNotifier {
       title: "Кресло детское KIDDY розовый",
       rating: "Rating:3 (Medium)",
       price: 42.44,
-      arUrl:"https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
+      arUrl: "https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
       description:
           "Минималистичное и лаконичное кресло Berry будет выигрышно смотреться в каждом интерьере. Выгибающая спинка кресла и подлокотники обеспечат комфортное положение сидящему человеку.",
       imgUrl:
@@ -245,7 +252,7 @@ class Products with ChangeNotifier {
       title: "Кресло для персонала CALUM (A3068-1) зеленый",
       rating: "Rating:3 (Medium)",
       price: 137.63,
-     arUrl:"https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
+      arUrl: "https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
       description:
           "Минималистичное и лаконичное кресло Berry будет выигрышно смотреться в каждом интерьере. Выгибающая спинка кресла и подлокотники обеспечат комфортное положение сидящему человеку.",
       imgUrl:
@@ -264,7 +271,7 @@ class Products with ChangeNotifier {
       title: "Кресло детское KIDDY синий",
       rating: "Rating:3 (Medium)",
       price: 42.44,
-      arUrl:"https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
+      arUrl: "https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
       description:
           "Минималистичное и лаконичное кресло Berry будет выигрышно смотреться в каждом интерьере. Выгибающая спинка кресла и подлокотники обеспечат комфортное положение сидящему человеку.",
       imgUrl:
@@ -283,7 +290,7 @@ class Products with ChangeNotifier {
       title: "Кресло посетительское SPARK серый",
       rating: "Rating:3 (Medium)",
       price: 135.34,
-     arUrl:"https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
+      arUrl: "https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
       description:
           "Минималистичное и лаконичное кресло Berry будет выигрышно смотреться в каждом интерьере. Выгибающая спинка кресла и подлокотники обеспечат комфортное положение сидящему человеку.",
       imgUrl:
@@ -302,7 +309,7 @@ class Products with ChangeNotifier {
       title: "Кресло детское HAPPY зеленый",
       rating: "Rating:3 (Medium)",
       price: 48.17,
-      arUrl:"https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
+      arUrl: "https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
       description:
           "Минималистичное и лаконичное кресло Berry будет выигрышно смотреться в каждом интерьере. Выгибающая спинка кресла и подлокотники обеспечат комфортное положение сидящему человеку.",
       imgUrl:
@@ -321,7 +328,7 @@ class Products with ChangeNotifier {
       title: "Кресло руководительское FALTO серый",
       rating: "Rating:3 (Medium)",
       price: 280.99,
-     arUrl:"https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
+      arUrl: "https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
       description:
           "Минималистичное и лаконичное кресло Berry будет выигрышно смотреться в каждом интерьере. Выгибающая спинка кресла и подлокотники обеспечат комфортное положение сидящему человеку.",
       imgUrl:
@@ -340,7 +347,7 @@ class Products with ChangeNotifier {
       title: "Кресло детское HAPPY синий",
       rating: "Rating:3 (Medium)",
       price: 48.17,
-      arUrl:"https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
+      arUrl: "https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
       description:
           "Минималистичное и лаконичное кресло Berry будет выигрышно смотреться в каждом интерьере. Выгибающая спинка кресла и подлокотники обеспечат комфортное положение сидящему человеку.",
       imgUrl:
@@ -359,7 +366,7 @@ class Products with ChangeNotifier {
       title: "Кресло для персонала CALUM (A3068-1) серый",
       rating: "Rating:3 (Medium)",
       price: 137.63,
-     arUrl:"https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
+      arUrl: "https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
       description:
           "Минималистичное и лаконичное кресло Berry будет выигрышно смотреться в каждом интерьере. Выгибающая спинка кресла и подлокотники обеспечат комфортное положение сидящему человеку.",
       imgUrl:
@@ -378,7 +385,7 @@ class Products with ChangeNotifier {
       title: "Кресло руководительское FALTO красный",
       rating: "Rating:3 (Medium)",
       price: 280.99,
-     arUrl:"https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
+      arUrl: "https://github.com/Saidikrom/GLTF/raw/Saidikrom/stull.glb",
       description:
           "Минималистичное и лаконичное кресло Berry будет выигрышно смотреться в каждом интерьере. Выгибающая спинка кресла и подлокотники обеспечат комфортное положение сидящему человеку.",
       imgUrl:
