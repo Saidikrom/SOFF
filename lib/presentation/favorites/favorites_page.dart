@@ -14,7 +14,6 @@ class FavoritesPage extends StatelessWidget {
     final gridData = Provider.of<Products>(context);
     final griditem = gridData.favorites;
     return Scaffold(
-      // backgroundColor: Colors.amber,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(

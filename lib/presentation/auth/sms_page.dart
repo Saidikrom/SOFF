@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
 import 'package:soff/presentation/auth/auth_page.dart';
 import 'package:soff/presentation/auth/create_account.dart';
-import 'package:soff/presentation/home/bottom_bar.dart';
 
 // ignore: must_be_immutable
 class SMSPage extends StatefulWidget {
@@ -126,44 +125,48 @@ class _SMSPageState extends State<SMSPage> {
                                 fontWeight: FontWeight.w400),
                           ),
                         ),
-                  const SizedBox(
-                    height: 30,
+                  GestureDetector(
+                    onTap: () async {
+                      try {
+                        PhoneAuthCredential credential =
+                            PhoneAuthProvider.credential(
+                                verificationId: AuthPage.verify,
+                                smsCode: pinput.text);
+                        await auth.signInWithCredential(credential);
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext ctx) =>
+                                CreateAccount(number: widget.login),
+                          ),
+                        );
+                      } catch (e) {
+                        print("wrong");
+                      }
+                    },
+                    child: Container(
+                      height: 40,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                          color: Color(0xff249B69),
+                          borderRadius: BorderRadius.circular(100)),
+                      child: Center(
+                        child: Text(
+                          textAlign: TextAlign.center,
+                          "NEXT",
+                          style: GoogleFonts.roboto(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
             ),
           ),
         ],
-      ),
-      bottomNavigationBar: BottomAppBar(
-        padding: EdgeInsets.symmetric(vertical: 16),
-        elevation: 0,
-        child: GestureDetector(
-          onTap: () async {
-            try {
-              PhoneAuthCredential credential = PhoneAuthProvider.credential(
-                  verificationId: AuthPage.verify, smsCode: pinput.text);
-              await auth.signInWithCredential(credential);
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (BuildContext ctx) =>
-                      CreateAccount(number: widget.login),
-                ),
-              );
-            } catch (e) {
-              print("wrong");
-            }
-          },
-          child: Text(
-            textAlign: TextAlign.center,
-            "Send again",
-            style: GoogleFonts.roboto(
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-              color: const Color(0xff249B69),
-            ),
-          ),
-        ),
       ),
     );
   }

@@ -15,6 +15,7 @@ class GridProduct extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final gridData = Provider.of<Products>(context);
+    // gridData.fetchProducts();
     final griditem = showFavorites ? gridData.favorites : gridData.list;
     return GridView.builder(
       shrinkWrap: true,

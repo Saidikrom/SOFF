@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:soff/presentation/home/grid_item.dart';
 
 import '../../providers/categories.dart';
+import '../../providers/products.dart';
 import 'categories_part.dart';
 import 'grid_products.dart';
 import 'search_part.dart';
@@ -20,6 +21,8 @@ class _HomePageState extends State<HomePage> {
   static const routName = "/home";
   @override
   Widget build(BuildContext context) {
+    final gridData = Provider.of<Products>(context);
+    gridData.fetchProducts();
     return Scaffold(
       resizeToAvoidBottomInset: true,
       body: SafeArea(

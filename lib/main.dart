@@ -11,7 +11,7 @@ import 'providers/grid_items.dart';
 import 'providers/products.dart';
 import 'providers/profile_images.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MyApp());
@@ -46,7 +46,8 @@ class MyApp extends StatelessWidget {
         routes: {
           ProductItemPage.routName: (ctx) => ProductItemPage(),
           CartPage.routName: (ctx) => CartPage(),
-          CustomBottomAppBar.routName: (ctx) => CustomBottomAppBar(isTrue: false),
+          CustomBottomAppBar.routName: (ctx) =>
+              CustomBottomAppBar(isTrue: false),
         },
       ),
     );

@@ -2,7 +2,7 @@
     package="com.example.soff">
      <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="soff"
+        android:label="SOFF"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -3,9 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import '../../providers/cart.dart';
+import '../home/product item page/product_item_page.dart';
 
 class CartItems extends StatelessWidget {
   final String id;
+  final int i;
   final String imageUrl;
   final String title;
   final String manifacture;
@@ -13,6 +15,7 @@ class CartItems extends StatelessWidget {
   final int quantity;
   const CartItems({
     super.key,
+    required this.i,
     required this.id,
     required this.title,
     required this.imageUrl,
@@ -32,15 +35,23 @@ class CartItems extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              width: 100,
-              height: 130,
-              decoration: BoxDecoration(
-                // color: Colors.green,
-                borderRadius: BorderRadius.circular(4),
-                image: DecorationImage(
-                  image: NetworkImage(imageUrl),
-                  fit: BoxFit.cover,
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).pushNamed(
+                  ProductItemPage.routName,
+                  arguments: {"gridItem": id, "i": i},
+                );
+              },
+              child: Container(
+                width: 100,
+                height: 130,
+                decoration: BoxDecoration(
+                  // color: Colors.green,
+                  borderRadius: BorderRadius.circular(4),
+                  image: DecorationImage(
+                    image: NetworkImage(imageUrl),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
@@ -57,14 +68,22 @@ class CartItems extends StatelessWidget {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
-                          width: 224,
-                          child: Text(
-                            title,
-                            style: GoogleFonts.roboto(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              color: Color(0xff323834),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).pushNamed(
+                              ProductItemPage.routName,
+                              arguments: {"gridItem": id, "i": i},
+                            );
+                          },
+                          child: SizedBox(
+                            width: 224,
+                            child: Text(
+                              title,
+                              style: GoogleFonts.roboto(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xff323834),
+                              ),
                             ),
                           ),
                         ),

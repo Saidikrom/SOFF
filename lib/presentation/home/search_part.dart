@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:soff/presentation/home/search_list.dart';
 
 class SearchPart extends StatelessWidget {
   const SearchPart({
@@ -20,6 +21,10 @@ class SearchPart extends StatelessWidget {
           width: 380,
           height: 56,
           child: TextFormField(
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (ctx) => SearchList()));
+            },
             controller: search,
             obscureText: true,
             textInputAction: TextInputAction.search,

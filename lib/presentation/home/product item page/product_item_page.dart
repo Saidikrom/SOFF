@@ -10,8 +10,6 @@ import '../bottom_bar.dart';
 import 'about_product.dart';
 
 class ProductItemPage extends StatefulWidget {
-  // int? i;
-  // String? productId;
   ProductItemPage({
     super.key,
   });
@@ -314,6 +312,9 @@ class _ProductItemPageState extends State<ProductItemPage> {
                                 ),
                               ],
                             ),
+                          ),
+                          SizedBox(
+                            width: 10,
                           ),
                           GestureDetector(
                             onTap: () {
