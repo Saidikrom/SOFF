@@ -74,7 +74,7 @@ class CBottomAppBar extends StatelessWidget {
               : SizedBox(),
           isCart
               ? Consumer<Cart>(builder: (ctx, value, child) {
-                  final cartItem = value.items.values.toList()[i];
+                  final cartItem = value.items.values.toList()[0];
                   print(i);
                   return Row(
                     children: [
@@ -91,7 +91,7 @@ class CBottomAppBar extends StatelessWidget {
                             GestureDetector(
                               onTap: () {
                                 cart.removeSingleItem(
-                                    cart.items.keys.toList()[i]);
+                                    cart.items.keys.toList()[0]);
                               },
                               child: Container(
                                 height: 25,
@@ -218,12 +218,12 @@ class CBottomAppBar extends StatelessWidget {
                 })
               : Consumer<Cart>(
                   builder: (ctx, value, child) {
-                    final cartItem = cart.items.values.toList()[i];
+                    final cartItem = cart.items.values.toList()[0];
                     return GestureDetector(
                       onTap: () {
                         isCart = true;
                         cart.addToCart(
-                            cart.items.keys.toList()[i],
+                            cart.items.keys.toList()[0],
                             cartItem.title,
                             cartItem.image,
                             cartItem.price,

@@ -29,7 +29,6 @@ class Cart with ChangeNotifier {
     String manufacturer,
   ) {
     if (_items.containsKey(productId)) {
-      //
       _items.update(
         productId,
         (currentProduct) => CartItem(
@@ -41,17 +40,15 @@ class Cart with ChangeNotifier {
           manufacturer: currentProduct.manufacturer,
         ),
       );
+      print(_items);
     } else {
-      _items.putIfAbsent(
-        productId,
-        () => CartItem(
-          id: UniqueKey().toString(),
-          title: title,
-          image: image,
-          quality: 1,
-          price: price,
-          manufacturer: manufacturer,
-        ),
+      _items[productId] = CartItem(
+        id: UniqueKey().toString(),
+        title: title,
+        image: image,
+        quality: 1,
+        price: price,
+        manufacturer: manufacturer,
       );
     }
     notifyListeners();

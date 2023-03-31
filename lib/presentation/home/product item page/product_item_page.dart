@@ -246,8 +246,9 @@ class _ProductItemPageState extends State<ProductItemPage> {
                     )
                   : SizedBox(),
               isCart
+                  // !R
                   ? Consumer<Cart>(builder: (ctx, value, child) {
-                      final cartItem = cart.items.values.toList()[i["i"]];
+                      final cartItem = cart.items[products.id];
                       return Row(
                         children: [
                           Container(
@@ -280,7 +281,7 @@ class _ProductItemPageState extends State<ProductItemPage> {
                                   ),
                                 ),
                                 Text(
-                                  cartItem.quality.toString(),
+                                  cartItem!.quality.toString(),
                                   style: GoogleFonts.roboto(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w400,
@@ -350,11 +351,11 @@ class _ProductItemPageState extends State<ProductItemPage> {
                         ],
                       );
                     })
+                  // !
                   : Consumer<Cart>(
                       builder: (ctx, value, child) {
                         return GestureDetector(
                           onTap: () {
-                            setState(() {});
                             cart.addToCart(
                               products.id,
                               products.title,
@@ -363,6 +364,8 @@ class _ProductItemPageState extends State<ProductItemPage> {
                               products.manufacturer,
                             );
                             isCart = true;
+
+                            setState(() {});
                           },
                           child: Container(
                             width: products.isAR ? 182 : 370,
