@@ -26,7 +26,6 @@ class SearchPart extends StatelessWidget {
                   .push(MaterialPageRoute(builder: (ctx) => SearchList()));
             },
             controller: search,
-            obscureText: true,
             textInputAction: TextInputAction.search,
             decoration: InputDecoration(
               contentPadding: const EdgeInsets.only(left: 20),

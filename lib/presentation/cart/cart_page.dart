@@ -99,7 +99,7 @@ class CartPage extends StatelessWidget {
                   : Expanded(
                       child: Consumer<Cart>(builder: (ctx, value, child) {
                         return ListView.builder(
-                          itemCount: cart.items.length,
+                          itemCount: cart.itemsCount(),
                           itemBuilder: (ctx, i) {
                             final cartItem = cart.items.values.toList()[i];
                             return CartItems(

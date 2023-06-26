@@ -1,10 +1,5 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:firebase_database/firebase_database.dart';
-
-import '../../models/product.dart';
 
 class SearchList extends StatefulWidget {
   const SearchList({super.key});
@@ -14,7 +9,7 @@ class SearchList extends StatefulWidget {
 }
 
 class _SearchListState extends State<SearchList> {
-  // List<Product> dataList = [];
+  TextEditingController search = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,8 +22,7 @@ class _SearchListState extends State<SearchList> {
             margin: EdgeInsets.only(right: 50, top: 5),
             width: 300,
             child: TextFormField(
-              // controller: search,
-              obscureText: true,
+              controller: search,
               textInputAction: TextInputAction.search,
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.only(left: 20),
@@ -57,35 +51,11 @@ class _SearchListState extends State<SearchList> {
                   ),
                 ),
               ),
-              onChanged: (text) {
-                // searchVoid(text);
-              },
+              onChanged: (text) {},
             ),
           ),
         ],
       ),
-      // body: StreamBuilder<QuerySnapshot>(
-      //   stream: FirebaseFirestore.instance.collection('products').snapshots(),
-      //   builder: (ctx, snapshots) {
-      //     return (snapshots.connectionState == ConnectionState.waiting)
-      //         ? Center(
-      //             child: CircularProgressIndicator(),
-      //           )
-      //         : ListView.builder(itemBuilder: (ctx, i) {
-      //             return Text(i.toString());
-      //           });
-      //   },
-      // ),
     );
   }
-
-  // void searchVoid(String text) {
-  //   DatabaseReference searchRef =
-  //       FirebaseDatabase.instance.ref().child("products");
-  //   searchRef.once().then((DataSnapshot snapShot) {
-  //         dataList.clear();
-  //         // var keys = snapShot.value?.keys;
-  //         var values = snapShot.value;
-  //       } as FutureOr Function(DatabaseEvent value));
-  // }
 }

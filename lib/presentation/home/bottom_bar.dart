@@ -70,7 +70,7 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
           height: 80,
           width: MediaQuery.of(context).size.width,
           decoration: const BoxDecoration(
-            color: Colors.white,
+            color: Colors.black,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
