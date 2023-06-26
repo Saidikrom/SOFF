@@ -38,6 +38,7 @@ dependencies:
   google_fonts: ^4.0.3
   provider: ^6.0.5
   svg_icon: ^0.0.1
+  flutter_svg: ^0.22.0
   firebase_auth: ^4.3.0
   firebase_core: ^2.8.0
   pinput: ^2.2.31
@@ -45,6 +46,7 @@ dependencies:
   http: ^0.13.5
   flutter_launcher_icons: ^0.11.0
   firebase_database: ^10.1.0
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
