@@ -7,6 +7,7 @@ class Product with ChangeNotifier {
   final String description;
   final String manufacturer;
   final String size;
+  final List list;
   final String type;
   final String upholsteryMaterial;
   final String crossMaterial;
@@ -19,6 +20,7 @@ class Product with ChangeNotifier {
   final bool isAR;
 
   Product({
+    required this.list,
     required this.id,
     required this.title,
     required this.rating,

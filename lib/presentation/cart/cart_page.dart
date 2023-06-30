@@ -115,6 +115,9 @@ class CartPage extends StatelessWidget {
                         );
                       }),
                     ),
+              SizedBox(
+                height: 100,
+              )
             ],
           ),
         ),

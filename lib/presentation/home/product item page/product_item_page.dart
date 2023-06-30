@@ -8,6 +8,7 @@ import 'package:svg_icon/svg_icon.dart';
 import '../../../providers/cart.dart';
 import '../bottom_bar.dart';
 import 'about_product.dart';
+import 'product_image_slider.dart';
 
 class ProductItemPage extends StatefulWidget {
   ProductItemPage({
@@ -40,83 +41,89 @@ class _ProductItemPageState extends State<ProductItemPage> {
             Container(
               height: 530,
               decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage(products.imgUrl),
-                  fit: BoxFit.cover,
-                ),
+                color: Colors.black12,
+                // image: DecorationImage(
+                //   image: NetworkImage(products.list[2]),
+                //   fit: BoxFit.cover,
+                // ),
               ),
-              child: SafeArea(
-                child: Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).pop();
-                        },
-                        child: Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.1),
-                                spreadRadius: 5,
-                                blurRadius: 20,
-                                offset:
-                                    Offset(0, 0), // changes position of shadow
-                              ),
-                            ],
-                          ),
-                          child: const Icon(
-                            Icons.arrow_back,
-                            size: 32,
-                          ),
+              child: Stack(
+                children: [
+                  Center(
+                    child: ProductImageSlider(
+                        length: products.list.length, list: products.list),
+                  ),
+                  Positioned(
+                    left: 15,
+                    top: 50,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Container(
+                        height: 40,
+                        width: 40,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.1),
+                              spreadRadius: 5,
+                              blurRadius: 20,
+                              offset:
+                                  Offset(0, 0), // changes position of shadow
+                            ),
+                          ],
+                        ),
+                        child: const Icon(
+                          Icons.arrow_back,
+                          size: 20,
                         ),
                       ),
-                      Consumer<Products>(
-                        builder: (ctx, value, child) {
-                          return GestureDetector(
-                            onTap: () {
-                              setState(() {});
-                              products.toggleFavorite();
-                            },
-                            child: Container(
-                              height: 50,
-                              width: 50,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                shape: BoxShape.circle,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black.withOpacity(0.1),
-                                    spreadRadius: 5,
-                                    blurRadius: 20,
-                                    offset: const Offset(
-                                        0, 0), // changes position of shadow
-                                  ),
-                                ],
-                              ),
-                              child: Icon(
-                                products.isFavorite
-                                    ? Icons.favorite
-                                    : Icons.favorite_border,
-                                color: products.isFavorite
-                                    ? Colors.red
-                                    : const Color(0xff757A78),
-                                size: 32,
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                    ],
+                    ),
                   ),
-                ),
+                  Consumer<Products>(
+                    builder: (ctx, value, child) {
+                      return Positioned(
+                        right: 15,
+                        top: 50,
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {});
+                            products.toggleFavorite();
+                          },
+                          child: Container(
+                            height: 40,
+                            width: 40,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.1),
+                                  spreadRadius: 5,
+                                  blurRadius: 20,
+                                  offset: const Offset(
+                                      0, 0), // changes position of shadow
+                                ),
+                              ],
+                            ),
+                            child: Icon(
+                              products.isFavorite
+                                  ? Icons.favorite
+                                  : Icons.favorite_border,
+                              color: products.isFavorite
+                                  ? Colors.red
+                                  : const Color(0xff757A78),
+                              size: 20,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ],
               ),
             ),
             const SizedBox(
@@ -324,13 +331,13 @@ class _ProductItemPageState extends State<ProductItemPage> {
                                 MaterialPageRoute(
                                   builder: (context) => CustomBottomAppBar(
                                     isTrue: false,
-                                    sentIndex: 2,
+                                    sentIndex: 3,
                                   ),
                                 ),
                               );
                             },
                             child: Container(
-                              width: 100,
+                              width: products.isAR ? 97 : 295,
                               height: 40,
                               decoration: BoxDecoration(
                                 color: const Color(0xff249B69),

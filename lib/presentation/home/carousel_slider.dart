@@ -12,6 +12,14 @@ class CarouselSliderW extends StatelessWidget {
     'https://www.englandfurniture.com/cid368/css/1000/images/11_6c00-cooper_sofa_detail.jpg',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE29k5DYtL_YbGlFlX-zufldUmBkXnWFkIXI3fuY8AQxdGeXqWQlm_pzXbiEhoOuk6nN0&usqp=CAU'
   ];
+  final List<String> saleList = [
+    "https://github.com/Saidikrom/images/raw/Saidikrom/sale%20off/10 (1).png",
+    "https://github.com/Saidikrom/images/raw/Saidikrom/sale%20off/20.png",
+    "https://github.com/Saidikrom/images/raw/Saidikrom/sale%20off/40.png",
+    "https://github.com/Saidikrom/images/raw/Saidikrom/sale%20off/60.png",
+    "https://github.com/Saidikrom/images/raw/Saidikrom/sale%20off/70.png",
+    "https://github.com/Saidikrom/images/raw/Saidikrom/sale%20off/90.png",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -32,17 +40,45 @@ class CarouselSliderW extends StatelessWidget {
                     decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
-                            spreadRadius: -20,
-                            color: Colors.black45,
-                            blurRadius: 25,
-                            offset: Offset(0.0, 30)),
+                          spreadRadius: -20,
+                          color: Colors.black45,
+                          blurRadius: 25,
+                          offset: Offset(0.0, 30),
+                        ),
                       ],
                     ),
                     margin: EdgeInsets.all(5.0),
                     child: ClipRRect(
-                        borderRadius: BorderRadius.circular(16),
-                        child:
-                            Image.network(item, fit: BoxFit.cover, width: 340)),
+                      borderRadius: BorderRadius.circular(16),
+                      child: Stack(
+                        children: [
+                          Image.network(item, fit: BoxFit.cover, width: 350),
+
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: Image.network(
+                                saleList[imgList.indexOf(item)],
+                                fit: BoxFit.cover,
+                                width: 100),
+                          ),
+                          // Positioned(
+                          //   bottom: 0.0,
+                          //   left: 0.0,
+                          //   right: 0.0,
+                          //   child: Image(
+                          //     image: NetworkImage(
+                          //       // saleList[imgList.indexOf(item)],
+                          //       "https://github.com/Saidikrom/images/raw/Saidikrom/sale%20off/10 (1).png",
+                          //       scale: .5,
+                          //     ),
+                          //     fit: BoxFit.cover,
+                          //     width: 10,
+                          //     height: 10,
+                          //   ),
+                          // ),
+                        ],
+                      ),
+                    ),
                   ),
                 ))
             .toList(),

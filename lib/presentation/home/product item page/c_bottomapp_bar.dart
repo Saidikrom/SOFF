@@ -152,7 +152,7 @@ class CBottomAppBar extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (context) => CustomBottomAppBar(
                                 isTrue: false,
-                                sentIndex: 2,
+                                sentIndex: 3,
                               ),
                             ),
                           );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -94,9 +95,11 @@ class CartItems extends StatelessWidget {
                           onTap: () {
                             cart.removeItem(id);
                           },
-                          child: const Icon(
-                            Icons.close,
-                            size: 15,
+                          child: SvgPicture.asset(
+                            "assets/icons/clear.svg",
+                            height: 20,
+                            width: 20,
+                            color: Colors.red,
                           ),
                         ),
                       ],

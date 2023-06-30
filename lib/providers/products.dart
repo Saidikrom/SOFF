@@ -6,7 +6,6 @@ import 'package:http/http.dart' as http;
 import '../models/product.dart';
 
 class Products with ChangeNotifier {
- 
   final List<Product> _list = [];
 
   var showAllFavorites = false;
@@ -17,16 +16,17 @@ class Products with ChangeNotifier {
   Future<void> fetchProducts() async {
     final url = Uri.parse(
         'https://soff-97172-default-rtdb.firebaseio.com/products.json');
-    
+
     if (_list.isEmpty) {
       try {
         final response = await http.get(url);
-        
+
         final extractedData = json.decode(response.body) as List<dynamic>;
         print('fucking works');
         for (var product in extractedData) {
           {
             _list.add(Product(
+              list: product['list'],
               id: product['id'],
               title: product['title'],
               rating: product["rating"],

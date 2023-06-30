@@ -75,7 +75,10 @@ class FavoritesPage extends StatelessWidget {
                     )
                   : GridProduct(
                       showFavorites: true,
-                    )
+                    ),
+              SizedBox(
+                height: 80,
+              )
             ],
           ),
         ),
