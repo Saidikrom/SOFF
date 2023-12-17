@@ -1,7 +1,6 @@
 # SOFF
 Online Furniture Shopping App
-
-![Asset 2](https://user-images.githubusercontent.com/70878222/227122112-d1a23b12-dd1d-4110-bdb8-7a6082cd4516.png)
+![Ellipse 1 3](https://github.com/Saidikrom/SOFF/assets/70878222/dc77c61e-be77-4a29-a068-e24b8011f799)
 
 # UI
 ![Component](https://user-images.githubusercontent.com/70878222/227128680-6f4daeb4-f0a3-4d02-9eb0-19b7bc8ef7fa.png)
